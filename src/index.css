@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Merriweather&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    height: 100%;
+  }
+
+:root {
+  /*Colors*/
+  --red-meat: #f1705e;
+  --red-tide: #ce2711;
+  /*Fonts*/
+  --lobster: 'Lobster', cursive;
+  --merri: 'Merriweather', serif;
+}
