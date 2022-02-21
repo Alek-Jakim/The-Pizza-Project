@@ -1,0 +1,51 @@
+[
+    {
+        "id": 1,
+        "name": "Margherita Elegance",
+        "ingredients": "Tomatoes, mozzarella cheese, fresh basil, salt, and extra-virgin olive oil.",
+        "price": 7.70,
+        "img": "/img/margherita.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Pepperoni Fire",
+        "ingredients": "Spicy salami made from cured pork and beef seasoned with paprika or other chili pepper.",
+        "price": 8.80,
+        "img": "/img/pepperoni.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Hawaiian Heaven",
+        "ingredients": "Tomato sauce, mozzarella cheese, sliced ham, and pineapple.",
+        "price": 9.70,
+        "img": "/img/hawaii.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Four Cheese Madness",
+        "ingredients": "Four kinds of cheese, tomato sauce, along with red or white tomato sauce.",
+        "price": 11.50,
+        "img": "/img/q-formaggi.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Four Seasons",
+        "ingredients": "Artichokes, tomatoes, basil, prosciutto, ham, mushrooms and olives.",
+        "price": 12.20,
+        "img": "/img/q-stagioni.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Devil-Style Diavola",
+        "ingredients": "Pepperoni, mushroom, extra cheese, sausage, onion, black olives, green pepper, fresh garlic.",
+        "price": 13.80,
+        "img": "/img/diavola.jpg"
+    },
+    {
+        "id": 7,
+        "name": "Chicago Gangster",
+        "ingredients": "Pepperoni, sausages, salami, onion, black olives, green pepper, mozzarella.",
+        "price": 13.20,
+        "img": ""
+    }
+]

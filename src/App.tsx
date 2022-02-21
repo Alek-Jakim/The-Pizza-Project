@@ -1,7 +1,10 @@
 import React, { FC } from "react"
 import "./App.css"
 import { pageTitle } from "./utils/pageTitle"
-import Navbar from "./components/Navbar/Navbar"
+
+import Header from "./components/Header/Header"
+import TopChoices from "./components/TopChoices/TopChoices"
+
 
 
 const App: FC = () => {
@@ -10,15 +13,8 @@ const App: FC = () => {
 
   return (
     <div className="app-container">
-      <Navbar />
-
-      <div className="header-container">
-        <div className="text-container">
-          <h1 className="header-title">Pizza never <br />tasted better</h1>
-          <p className="header-text">What are you waiting for ?</p>
-          <button className="header-btn">Place Order</button>
-        </div>
-      </div>
+      <Header />
+      <TopChoices />
     </div>
   )
 }
