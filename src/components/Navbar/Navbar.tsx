@@ -9,7 +9,7 @@ const Navbar: FC = () => {
     const location = useLocation();
 
     const [currentPath, setCurrentPath] = useState<string>(location.pathname);
-    const { pizzaCart, setPizzaCart } = useContext(CartContext);
+    const { pizzaCart, setPizzaCart, cartItems } = useContext(CartContext);
 
     useEffect(() => {
         setCurrentPath(location.pathname);
@@ -28,9 +28,9 @@ const Navbar: FC = () => {
                 <Link to="/menu" style={currentPath === "/menu" ? { borderBottom: "2px solid var(--red-tide)" } : {}}>Menu</Link>
                 <Link to="/contact" style={currentPath === "/contact" ? { borderBottom: "2px solid var(--red-tide)" } : {}}>Contact Us</Link>
             </div>
-            <div className="cart-icon-cont">
-                <AiOutlineShoppingCart className="cart-icon" onClick={() => setPizzaCart(!pizzaCart)} />
-                <small className="cart-icon-num">{1}</small>
+            <div className="cart-icon-cont" onClick={() => setPizzaCart(!pizzaCart)}>
+                <AiOutlineShoppingCart className="cart-icon" />
+                <small className="cart-icon-num">{cartItems.length}</small>
             </div>
         </nav>
     )
