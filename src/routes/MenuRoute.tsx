@@ -1,9 +1,10 @@
-import React from "react"
+import React, { FC } from "react"
 import Navbar from "../components/Navbar/Navbar"
+import { RouteProps } from "../components/Interfaces"
 
-type Props = {}
 
-const MenuRoute = (props: Props) => {
+
+const MenuRoute: FC<RouteProps> = () => {
     return (
         <div>
             <Navbar />

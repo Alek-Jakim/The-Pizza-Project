@@ -24,3 +24,25 @@
     color: var(--whispy-white);
     font-size: 2rem;
 }
+
+.cart-icon-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+
+.cart-icon {
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+.cart-icon-num {
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.cart-icon-cont:hover {
+    color: var(--red-meat);
+}
