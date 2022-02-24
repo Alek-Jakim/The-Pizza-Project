@@ -3,7 +3,7 @@ import "./Cart.css"
 import { AiOutlineClose } from "react-icons/ai"
 import { RiShoppingCartLine } from "react-icons/ri"
 import CartContext from "../../context/CartContext"
-import { defaultQuantityValues, PIZZA_DEFAULT_QUANTITY } from "../../defaults/defaults"
+import { defaultQuantityValues } from "../../defaults/defaults"
 import { returnBtnDefault } from "../../utils/helperFunctions"
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md"
 import { validObject } from "../Interfaces"
@@ -14,7 +14,7 @@ const Cart: FC = () => {
     const { pizzaCart, setPizzaCart, cartItems, setCartItems, pizzaQuantity, setPizzaQuantity } = useContext(CartContext);
 
     // Increments the quantity of the pizzas in the cart
-    function increment(item: any): void {
+    function increment(item: validObject): void {
 
         if (pizzaQuantity[item.name] >= 0 && pizzaQuantity[item.name] < 10) {
             setPizzaQuantity({
@@ -25,8 +25,7 @@ const Cart: FC = () => {
     }
 
     // Decrements the quantity of the pizzas in the cart
-    function decrement(item: any): void {
-
+    function decrement(item: validObject): void {
         if (pizzaQuantity[item.name] > 0) {
             setPizzaQuantity({
                 ...pizzaQuantity,
@@ -36,7 +35,20 @@ const Cart: FC = () => {
     }
 
 
-    useEffect(() => console.log(cartItems), [pizzaQuantity])
+    useEffect(() => {
+        // If the quantity of a pizza is set to 0, it is automatically removed from the cart
+        for (let item in cartItems) {
+            if (pizzaQuantity[cartItems[parseInt(item)].name] <= 0) {
+                setCartItems([...cartItems.filter((i) => i.name !== cartItems[parseInt(item)].name)]);
+                let targetBtn: any = document.querySelector(`.btn-${cartItems[parseInt(item)].id}`);
+
+                targetBtn.innerHTML = "Add To Cart";
+                targetBtn.disabled = false;
+            }
+        }
+        cartItems.length === 0 && returnBtnDefault();
+    }, [pizzaQuantity, cartItems.length])
+
 
     return (
         <div className="cart-container">
@@ -53,8 +65,8 @@ const Cart: FC = () => {
                             </div>
                             :
                             <div className="cart-items">
-                                {cartItems.filter(item => item.quantity !== 0).map((item: any, index) => (
-                                    <div key={index} className="cart-item-container">
+                                {cartItems.map((item: any, index) => {
+                                    return pizzaQuantity[item.name] !== 0 && <div key={index} className="cart-item-container">
                                         <div className="cart-item-text-wrap">
                                             <h3 className="cart-item-name">{item.name}</h3>
                                             <p className="cart-item-price">Price: €{item.price}</p>
@@ -65,14 +77,10 @@ const Cart: FC = () => {
                                             <MdKeyboardArrowRight className="quantity-arrow" onClick={() => increment(item)} />
                                         </div>
                                     </div>
-                                ))}
+                                })}
                                 <div className="cart-btn-container">
                                     <button className="clear-cart-btn" onClick={() => {
                                         setCartItems([]);
-
-                                        // makes all btns enabled again
-                                        returnBtnDefault();
-
                                         // Reset the pizza quantities
                                         setPizzaQuantity(defaultQuantityValues);
 

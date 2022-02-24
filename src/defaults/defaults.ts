@@ -16,4 +16,3 @@ export const defaultValues = {
     setPizzaQuantity: () => defaultQuantityValues
 }
 
-export const PIZZA_DEFAULT_QUANTITY: number = 1

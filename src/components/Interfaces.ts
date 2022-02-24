@@ -28,7 +28,6 @@ export interface validObject {
     id: number;
     name: string;
     price: number;
-    quantity: number;
 }
 
 export interface ICartContext {
