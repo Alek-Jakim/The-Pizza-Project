@@ -2,14 +2,18 @@ import React, { useContext } from "react"
 import "./TopChoices.css"
 import pizzaData from "../../data/pizzaData.json"
 import CartContext from "../../context/CartContext"
-import { ICartItems } from "../../components/Interfaces"
+
 
 const TopChoices = () => {
 
-    const { cartItems, setCartItems } = useContext(CartContext);
+    const { cartItems, setCartItems, pizzaQuantity } = useContext(CartContext);
 
-    const addToCart = (image: string, name: string, price: number) => {
-        setCartItems([...cartItems, { image, name, price }])
+    const PIZZA_DEFAULT_QUANTITY: number = 1
+
+    function addToCart(id: number, name: string, price: number, quantity: number, e: any) {
+        setCartItems([...cartItems, { id, name, price, quantity }]);
+        e.target.disabled = true;
+        e.target.innerHTML = "Added"
     }
 
     return (
@@ -22,7 +26,8 @@ const TopChoices = () => {
                         <h3 className="pizza-name">{pizza.name}</h3>
                         <p className="pizza-ingredients">{pizza.ingredients}</p>
                         <p className="pizza-price"><span className="price-symbol">€</span>{pizza.price}</p>
-                        <button className="pizza-btn" onClick={() => addToCart(pizza.img, pizza.name, pizza.price)}>Add To Cart</button>
+                        <button className="pizza-btn" onClick={(e) => addToCart(pizza.id, pizza.name, pizza.price, pizzaQuantity[pizza.name], e)
+                        }>Add To Cart</button>
                     </div>
                 ))}
             </div>
