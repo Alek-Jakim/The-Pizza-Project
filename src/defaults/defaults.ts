@@ -13,6 +13,8 @@ export const defaultValues = {
     cartItems: [],
     setCartItems: () => [],
     pizzaQuantity: defaultQuantityValues,
-    setPizzaQuantity: () => defaultQuantityValues
+    setPizzaQuantity: () => defaultQuantityValues,
+    cartTotal: 0,
+    setCartTotal: () => 0
 }
 

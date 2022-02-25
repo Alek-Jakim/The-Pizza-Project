@@ -24,19 +24,22 @@ export interface PizzaQuantity {
     ["Devil-Style Diavola"]: number
 }
 
-export interface validObject {
+export interface ValidObject {
     id: number;
     name: string;
     price: number;
 }
 
+
 export interface ICartContext {
     pizzaCart: boolean;
     setPizzaCart: React.Dispatch<React.SetStateAction<boolean>>;
-    cartItems: validObject[];
-    setCartItems: React.Dispatch<React.SetStateAction<validObject[]>>;
+    cartItems: ValidObject[];
+    setCartItems: React.Dispatch<React.SetStateAction<ValidObject[]>>;
     pizzaQuantity: PizzaQuantity;
-    setPizzaQuantity: React.Dispatch<React.SetStateAction<PizzaQuantity>>
+    setPizzaQuantity: React.Dispatch<React.SetStateAction<PizzaQuantity>>;
+    cartTotal: number;
+    setCartTotal: React.Dispatch<React.SetStateAction<number>>;
 }
 
 export interface itemObject {

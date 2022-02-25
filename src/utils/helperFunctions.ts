@@ -1,6 +1,6 @@
-import { validObject } from "../components/Interfaces"
+import { ValidObject } from "../components/Interfaces"
 
-export function containsObject(obj: validObject, list: Array<validObject>): boolean {
+export function containsObject(obj: ValidObject, list: Array<ValidObject>): boolean {
     let i: number;
     let value: boolean;
     for (i = 0; i < list.length; i++) {
@@ -11,19 +11,6 @@ export function containsObject(obj: validObject, list: Array<validObject>): bool
         }
     }
     return value;
-}
-
-export function filteredPizzaCart(arr: Array<validObject>): Array<validObject> {
-    return arr.map(item => {
-
-        if (containsObject(item, arr)) {
-            console.log("it exists")
-        } else {
-            console.log("not exists");
-        }
-
-        return item
-    })
 }
 
 export function returnBtnDefault() {

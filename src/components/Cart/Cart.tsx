@@ -1,4 +1,4 @@
-import React, { FC, useContext, useEffect } from "react"
+import React, { FC, useContext, useEffect, useState } from "react"
 import "./Cart.css"
 import { AiOutlineClose } from "react-icons/ai"
 import { RiShoppingCartLine } from "react-icons/ri"
@@ -6,33 +6,39 @@ import CartContext from "../../context/CartContext"
 import { defaultQuantityValues } from "../../defaults/defaults"
 import { returnBtnDefault } from "../../utils/helperFunctions"
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md"
-import { validObject } from "../Interfaces"
+import { ValidObject } from "../Interfaces"
 
 
 const Cart: FC = () => {
 
-    const { pizzaCart, setPizzaCart, cartItems, setCartItems, pizzaQuantity, setPizzaQuantity } = useContext(CartContext);
+    const { pizzaCart, setPizzaCart, cartItems, setCartItems, pizzaQuantity, setPizzaQuantity, cartTotal, setCartTotal } = useContext(CartContext);
 
     // Increments the quantity of the pizzas in the cart
-    function increment(item: validObject): void {
+    function increment(item: ValidObject): void {
 
         if (pizzaQuantity[item.name] >= 0 && pizzaQuantity[item.name] < 10) {
+
             setPizzaQuantity({
                 ...pizzaQuantity,
                 [item.name]: pizzaQuantity[item.name] += 1
             });
+            setCartTotal(cartTotal + item.price);
         }
     }
 
     // Decrements the quantity of the pizzas in the cart
-    function decrement(item: validObject): void {
+    function decrement(item: ValidObject): void {
         if (pizzaQuantity[item.name] > 0) {
+
             setPizzaQuantity({
                 ...pizzaQuantity,
                 [item.name]: pizzaQuantity[item.name] -= 1
             });
+            setCartTotal(cartTotal - item.price);
         }
     }
+
+
 
 
     useEffect(() => {
@@ -40,6 +46,7 @@ const Cart: FC = () => {
         for (let item in cartItems) {
             if (pizzaQuantity[cartItems[parseInt(item)].name] <= 0) {
                 setCartItems([...cartItems.filter((i) => i.name !== cartItems[parseInt(item)].name)]);
+
                 let targetBtn: any = document.querySelector(`.btn-${cartItems[parseInt(item)].id}`);
 
                 targetBtn.innerHTML = "Add To Cart";
@@ -47,6 +54,7 @@ const Cart: FC = () => {
             }
         }
         cartItems.length === 0 && returnBtnDefault();
+
     }, [pizzaQuantity, cartItems.length])
 
 
@@ -78,9 +86,13 @@ const Cart: FC = () => {
                                         </div>
                                     </div>
                                 })}
+                                <div className="cart-total">
+                                    <p>Total: €{cartTotal.toFixed(1)}</p>
+                                </div>
                                 <div className="cart-btn-container">
                                     <button className="clear-cart-btn" onClick={() => {
                                         setCartItems([]);
+                                        setCartTotal(0);
                                         // Reset the pizza quantities
                                         setPizzaQuantity(defaultQuantityValues);
 

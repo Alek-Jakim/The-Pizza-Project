@@ -6,12 +6,13 @@ import CartContext from "../../context/CartContext"
 
 const TopChoices = () => {
 
-    const { cartItems, setCartItems, pizzaQuantity } = useContext(CartContext);
+    const { cartItems, setCartItems, cartTotal, setCartTotal } = useContext(CartContext);
 
     function addToCart(id: number, name: string, price: number, e: any) {
         setCartItems([...cartItems, { id, name, price }]);
         e.target.disabled = true;
         e.target.innerHTML = "Added";
+        setCartTotal(cartTotal + price);
     }
 
     return (
