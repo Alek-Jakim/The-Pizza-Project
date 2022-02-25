@@ -1,4 +1,4 @@
-import React, { FC, useState, useContext } from "react"
+import React, { FC, useContext } from "react"
 import "./App.css"
 import { pageTitle } from "./utils/pageTitle"
 
@@ -14,14 +14,12 @@ const App: FC<RouteProps> = ({ cartComp }) => {
   // Sets the tab title of the current page
   pageTitle("The Pizza Project | Home");
 
-  const { pizzaCart, setPizzaCart } = useContext(CartContext);
+  const { pizzaCart } = useContext(CartContext);
 
 
   return (
 
-    <div className="app-container">
-
-
+    <div>
       <Header />
       <TopChoices />
       {

@@ -17,7 +17,7 @@ ReactDOM.render(
       <Routes>
         <Route path="/" element={<App cartComp={<Cart />} />} />
         <Route path="/menu" element={<MenuRoute cartComp={<Cart />} />} />
-        <Route path="/about" element={<AboutRoute />} />
+        <Route path="/about" element={<AboutRoute cartComp={<Cart />} />} />
         <Route path="/contact" element={<ContactRoute />} />
       </Routes>
     </BrowserRouter></CartProvider>, document.getElementById("root"));
