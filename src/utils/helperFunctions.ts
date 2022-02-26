@@ -1,6 +1,6 @@
-import { ValidObject } from "../components/Interfaces"
+import { ICartItems } from "../components/Interfaces"
 
-export function containsObject(obj: ValidObject, list: Array<ValidObject>): boolean {
+export function containsObject(obj: ICartItems, list: Array<ICartItems>): boolean {
     let i: number;
     let value: boolean;
     for (i = 0; i < list.length; i++) {

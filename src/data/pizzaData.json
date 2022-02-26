@@ -2,7 +2,7 @@
     {
         "id": 1,
         "name": "Margherita Elegance",
-        "ingredients": "Tomatoes, mozzarella cheese, fresh basil, salt, and extra-virgin olive oil.",
+        "ingredients": "Marinara sauce, garlic, olive oil, basil, oregano.",
         "price": 7.70,
         "img": "/img/margherita.jpg"
     },
@@ -46,6 +46,27 @@
         "name": "Chicago Gangster",
         "ingredients": "Pepperoni, sausages, salami, onion, black olives, green pepper, mozzarella.",
         "price": 13.20,
-        "img": ""
+        "img": "/img/chicago.jpg"
+    },
+    {
+        "id": 8,
+        "name": "Neapolitan Dream",
+        "ingredients": "San Marzano tomato sauce, Mozzarella di bufala, olive oil.",
+        "price": 8.00,
+        "img": "/img/neapolitan.jpg"
+    },
+    {
+        "id": 9,
+        "name": "Prosciutto Power",
+        "ingredients": "Tomato sauce, mozzarella, prosciutto (Italian ham), olive oil, oregao.",
+        "price": 10.40,
+        "img": "/img/prosciutto.jpg"
+    },
+    {
+        "id": 10,
+        "name": "Frutti di Mare",
+        "ingredients": "Tomato sauce, mozzarella, clams (Vongole), tiger prawns and mussels.",
+        "price": 13.50,
+        "img": "/img/mare.jpg"
     }
 ]

@@ -9,6 +9,7 @@ import App from "./App";
 import MenuRoute from "./routes/MenuRoute"
 import AboutRoute from "./routes/AboutRoute"
 import ContactRoute from "./routes/ContactRoute"
+import CheckoutRoute from "./routes/CheckoutRoute";
 import Cart from "./components/Cart/Cart"
 
 ReactDOM.render(
@@ -19,6 +20,7 @@ ReactDOM.render(
         <Route path="/menu" element={<MenuRoute cartComp={<Cart />} />} />
         <Route path="/about" element={<AboutRoute cartComp={<Cart />} />} />
         <Route path="/contact" element={<ContactRoute />} />
+        <Route path="/checkout" element={<CheckoutRoute />} />
       </Routes>
     </BrowserRouter></CartProvider>, document.getElementById("root"));
 

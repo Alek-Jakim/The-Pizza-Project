@@ -13,6 +13,7 @@ const Navbar: FC = () => {
 
     useEffect(() => {
         setCurrentPath(location.pathname);
+        console.log(cartItems)
     }, [currentPath]);
 
 
@@ -27,6 +28,10 @@ const Navbar: FC = () => {
                 <Link to="/about" style={currentPath === "/about" ? { borderBottom: "2px solid var(--red-tide)" } : {}}>About</Link>
                 <Link to="/menu" style={currentPath === "/menu" ? { borderBottom: "2px solid var(--red-tide)" } : {}}>Menu</Link>
                 <Link to="/contact" style={currentPath === "/contact" ? { borderBottom: "2px solid var(--red-tide)" } : {}}>Contact Us</Link>
+                {
+                    cartItems.length !== 0 && (
+                        <Link to="/checkout" style={currentPath === "/checkout" ? { borderBottom: "2px solid var(--red-tide)" } : {}}>Checkout</Link>)
+                }
             </div>
             <div className="cart-icon-cont" onClick={() => setPizzaCart(!pizzaCart)}>
                 <AiOutlineShoppingCart className="cart-icon" />
