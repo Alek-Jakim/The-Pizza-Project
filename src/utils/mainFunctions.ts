@@ -66,3 +66,4 @@ export const calculateTotal = (cartItems: ICartItems[], cartTotal: number, setCa
     }
     return total
 }
+

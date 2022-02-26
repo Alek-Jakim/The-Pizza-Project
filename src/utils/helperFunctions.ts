@@ -1,21 +1,12 @@
-import { ICartItems } from "../components/Interfaces"
-
-export function containsObject(obj: ICartItems, list: Array<ICartItems>): boolean {
-    let i: number;
-    let value: boolean;
-    for (i = 0; i < list.length; i++) {
-        if (list[i].name === obj.name) {
-            value = true;
-        } else {
-            value = false;
-        }
-    }
-    return value;
-}
-
 export function returnBtnDefault() {
     const btns = document.querySelectorAll(".pizza-btn");
     btns.forEach((btn: any) => {
+        btn.disabled = false;
+        btn.innerText = "Add To Cart"
+    });
+
+    const btnsMenu = document.querySelectorAll(".cart-menu-button");
+    btnsMenu.forEach((btn: any) => {
         btn.disabled = false;
         btn.innerText = "Add To Cart"
     });

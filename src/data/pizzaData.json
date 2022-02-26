@@ -9,7 +9,7 @@
     {
         "id": 2,
         "name": "Pepperoni Fire",
-        "ingredients": "Spicy salami made from cured pork and beef seasoned with paprika or other chili pepper.",
+        "ingredients": "Spicy salami made from cured pork and beef seasoned with paprika.",
         "price": 8.80,
         "img": "/img/pepperoni.jpg"
     },
@@ -37,7 +37,7 @@
     {
         "id": 6,
         "name": "Devil-Style Diavola",
-        "ingredients": "Pepperoni, mushroom, extra cheese, sausage, onion, black olives, green pepper, fresh garlic.",
+        "ingredients": "Pepperoni, mushroom, cheese, sausage, black olives, green pepper, fresh garlic.",
         "price": 13.80,
         "img": "/img/diavola.jpg"
     },
