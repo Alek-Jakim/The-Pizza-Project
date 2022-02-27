@@ -3,7 +3,7 @@ import "./Menu.css"
 import Navbar from "../Navbar/Navbar"
 import pizzaData from "../../data/pizzaData.json"
 import CartContext from "../../context/CartContext"
-
+import Footer from "../Footer/Footer"
 
 const Menu: FC = () => {
 
@@ -53,6 +53,7 @@ const Menu: FC = () => {
                     }
                 </div>
             </div>
+            <Footer />
         </div>
     )
 }

@@ -25,7 +25,6 @@ const App: FC<RouteProps> = ({ cartComp }) => {
       {
         pizzaCart && <div style={{ position: "relative" }}>{cartComp}</div>
       }
-
     </div>
   )
 }

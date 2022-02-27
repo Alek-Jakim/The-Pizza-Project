@@ -2,11 +2,12 @@ import React, { useContext } from "react"
 import "./TopChoices.css"
 import pizzaData from "../../data/pizzaData.json"
 import CartContext from "../../context/CartContext"
+import Footer from "../Footer/Footer"
 
 
 const TopChoices = () => {
 
-    const { cartItems, setCartItems, cartTotal, setCartTotal } = useContext(CartContext);
+    const { cartItems, setCartItems } = useContext(CartContext);
 
     function addToCart(id: number, name: string, price: number, quantity: number, e: any) {
 
@@ -34,6 +35,7 @@ const TopChoices = () => {
                     </div>
                 ))}
             </div>
+            <Footer />
         </section>
     )
 }

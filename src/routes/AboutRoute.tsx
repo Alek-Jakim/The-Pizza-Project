@@ -4,7 +4,6 @@ import CartContext from "../context/CartContext"
 import { RouteProps } from "../components/Interfaces"
 
 
-
 const AboutRoute: FC<RouteProps> = ({ cartComp }) => {
 
     const { pizzaCart } = useContext(CartContext);

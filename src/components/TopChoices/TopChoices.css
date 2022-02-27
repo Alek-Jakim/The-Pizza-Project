@@ -88,3 +88,10 @@
     background: #fff;
     color: var(--red-tide);
   }
+
+.pizza-btn:disabled,
+.pizza-btn[disabled] {
+    background-color: #1f1f1f;
+    color: var(--red-meat);
+    cursor: crosshair;
+}
