@@ -22,3 +22,7 @@
   --lobster: 'Lobster', cursive;
   --merri: 'Merriweather', serif;
 }
+
+:disabled {
+    background-color: aqua;
+}

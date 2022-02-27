@@ -10,9 +10,14 @@ const Menu: FC = () => {
     const { cartItems, setCartItems } = useContext(CartContext);
 
     function addToCart(id: number, name: string, price: number, quantity: number, e: any) {
-        setCartItems([...cartItems, { id, name, price, quantity }]);
-        e.target.disabled = true;
-        e.target.innerHTML = "Added";
+
+        let itemExists = cartItems.some(item => item.name === name);
+
+        if (!itemExists) {
+            setCartItems([...cartItems, { id, name, price, quantity }]);
+            e.target.disabled = true;
+            e.target.innerHTML = "Added";
+        }
     }
 
     return (
