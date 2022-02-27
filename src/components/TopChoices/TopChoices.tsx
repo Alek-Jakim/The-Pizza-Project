@@ -9,12 +9,12 @@ const TopChoices = () => {
 
     const { cartItems, setCartItems } = useContext(CartContext);
 
-    function addToCart(id: number, name: string, price: number, quantity: number, e: any) {
+    function addToCart(id: number, name: string, price: number, quantity: number, img: string, e: any) {
 
         let itemExists = cartItems.some(item => item.name === name);
 
         if (!itemExists) {
-            setCartItems([...cartItems, { id, name, price, quantity }]);
+            setCartItems([...cartItems, { id, name, price, quantity, img }]);
             e.target.disabled = true;
             e.target.innerHTML = "Added";
         }
@@ -30,7 +30,7 @@ const TopChoices = () => {
                         <h3 className="pizza-name">{pizza.name}</h3>
                         <p className="pizza-ingredients">{pizza.ingredients}</p>
                         <p className="pizza-price"><span className="price-symbol">€</span>{pizza.price}</p>
-                        <button className={`pizza-btn btn-${pizza.id}`} onClick={(e) => addToCart(pizza.id, pizza.name, pizza.price, 1, e)
+                        <button className={`pizza-btn btn-${pizza.id}`} onClick={(e) => addToCart(pizza.id, pizza.name, pizza.price, 1, pizza.img, e)
                         }>Add to Cart</button>
                     </div>
                 ))}

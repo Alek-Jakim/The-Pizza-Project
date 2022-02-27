@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Merriweather&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan&family=Lobster&display=swap');
 
 * {
     margin: 0;
@@ -20,9 +20,5 @@
 
   /*Fonts*/
   --lobster: 'Lobster', cursive;
-  --merri: 'Merriweather', serif;
-}
-
-:disabled {
-    background-color: aqua;
+  --merri: 'League Spartan', sans-serif;
 }

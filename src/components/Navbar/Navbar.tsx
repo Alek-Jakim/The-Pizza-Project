@@ -13,7 +13,6 @@ const Navbar: FC = () => {
 
     useEffect(() => {
         setCurrentPath(location.pathname);
-        console.log(cartItems)
     }, [currentPath]);
 
 
