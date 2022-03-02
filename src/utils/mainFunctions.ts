@@ -53,7 +53,7 @@ export const checkQuantity = (cartItems: ICartItems[], setCartItems: React.Dispa
 }
 
 
-export const calculateTotal = (cartItems: ICartItems[], cartTotal: number, setCartTotal: React.Dispatch<React.SetStateAction<number>>) => {
+export const calculateTotal = (cartItems: ICartItems[]) => {
     let total = 0;
 
     for (let key in cartItems) {

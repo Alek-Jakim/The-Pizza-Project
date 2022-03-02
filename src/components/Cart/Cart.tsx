@@ -6,6 +6,8 @@ import CartContext from "../../context/CartContext"
 import { returnBtnDefault } from "../../utils/helperFunctions"
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md"
 import { increment, decrement, checkQuantity, calculateTotal } from "../../utils/mainFunctions"
+import { Link } from "react-router-dom";
+
 
 
 const Cart: FC = () => {
@@ -19,13 +21,17 @@ const Cart: FC = () => {
             if (cartItems[item].quantity <= 0) {
                 let targetBtn: any = document.querySelector(`.btn-${cartItems[parseInt(item)].id}`);
 
-                targetBtn.innerHTML = "Cart";
-                targetBtn.disabled = false;
+                if (targetBtn && targetBtn !== null) {
+                    targetBtn.innerHTML = "Cart";
+                    targetBtn.disabled = false;
+                }
+
+
             }
         }
         cartItems.length === 0 && returnBtnDefault();
         checkQuantity(cartItems, setCartItems);
-        setCartTotal(calculateTotal(cartItems, cartTotal, setCartTotal));
+        setCartTotal(calculateTotal(cartItems));
     }, [cartItems])
 
 
@@ -65,7 +71,7 @@ const Cart: FC = () => {
                                         setCartItems([]);
                                         setCartTotal(0);
                                     }}>Clear Cart</button>
-                                    <button className="checkout-btn">Checkout</button>
+                                    <button className="checkout-btn"><Link to="/checkout" style={{ textDecoration: "none", color: "white", fontSize: "1.3rem" }}>Checkout</Link></button>
                                 </div>
                             </div>
                     }

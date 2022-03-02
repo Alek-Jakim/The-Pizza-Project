@@ -1,13 +1,17 @@
-import React, { FC, useContext } from "react"
+import React, { FC, useContext, useEffect } from "react"
 import { RouteProps } from "../components/Interfaces"
 import CartContext from "../context/CartContext"
 import Menu from "../components/Menu/Menu"
+import { calculateTotal } from "../utils/mainFunctions"
 
 
 
 const MenuRoute: FC<RouteProps> = ({ cartComp }) => {
 
-    const { pizzaCart } = useContext(CartContext)
+    const { pizzaCart, cartItems, setCartTotal } = useContext(CartContext);
+
+    useEffect(() => setCartTotal(calculateTotal(cartItems)), [cartItems])
+
 
     return (
         <div>

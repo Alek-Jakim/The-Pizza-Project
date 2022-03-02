@@ -10,7 +10,7 @@
     font-family: var(--merri);
   }
 
-.checkout-items-container {
+.checkout-items-container, .checkout-payment {
   background-color: var(--whispy-white);
   width: 60%;
   margin: 10px auto;
@@ -43,9 +43,6 @@
   margin-bottom: 20px;
 }
 
-.checkout-price {
-  font-weight: bold;
-}
 
 .checkout-img {
   width: 140px;
@@ -53,3 +50,79 @@
   border-radius: 10px;
 }
 
+
+.checkout-total {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 20px 30px;
+  border: 2px solid #000;
+  background-color: var(--whispy-white);
+  width: 100%;
+}
+
+.checkout-total > p{
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+
+.checkout-select-card {
+  width: 50%;
+  margin: 10px auto;
+}
+
+.checkout-payment {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.select-menu, .cardholder, .cardyear, .cardcode, .cardnumber {
+  font-size: 1.5rem;
+  padding: 10px 20px;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #000;
+  width: 100%;
+  background-color: transparent;
+  margin: 15px auto;
+}
+
+.card-year-code {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardcode {
+  padding-top: 15px;
+}
+
+.cardyear, .cardcode {
+  margin: 1px 5px;
+}
+
+.payment-btn {
+  padding: 15px 40px;
+  font-size: 1.5rem;
+  background: var(--red-tide);
+  color: #fff;
+  outline: none;
+  border: 3px solid var(--red-tide);
+  border-radius: 10px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+}
+
+.payment-btn:hover {
+  border: 3px solid var(--red-tide);
+  background: #fff;
+  color: var(--red-tide);
+}

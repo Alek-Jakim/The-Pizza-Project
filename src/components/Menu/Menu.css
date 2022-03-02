@@ -67,6 +67,10 @@
   width: 25%;
 }
 
+.cart-menu-ingredients {
+  font-size: 1.3rem;
+}
+
 .cart-menu-header {
   display: flex;
   flex-direction: column;

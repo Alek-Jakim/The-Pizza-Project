@@ -27,11 +27,15 @@ export interface ICartContext {
     setCartTotal: React.Dispatch<React.SetStateAction<number>>;
 }
 
-export interface itemObject {
-    id: number,
-    img: string,
-    ingredients: string,
-    name: string,
-    price: number
+export interface ICardDetails {
+    cardType: string;
+    cardHolder: string;
+    cardNumber: number;
+    cardDate: any;
+    cardCode: number;
 }
+
+
+
+
 
