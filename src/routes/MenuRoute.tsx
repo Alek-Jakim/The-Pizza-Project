@@ -3,12 +3,14 @@ import { RouteProps } from "../components/Interfaces"
 import CartContext from "../context/CartContext"
 import Menu from "../components/Menu/Menu"
 import { calculateTotal } from "../utils/mainFunctions"
-
+import { pageTitle } from "../utils/pageTitle"
 
 
 const MenuRoute: FC<RouteProps> = ({ cartComp }) => {
 
     const { pizzaCart, cartItems, setCartTotal } = useContext(CartContext);
+    pageTitle("The Pizza Project | Our Menu");
+
 
     useEffect(() => setCartTotal(calculateTotal(cartItems)), [cartItems])
 

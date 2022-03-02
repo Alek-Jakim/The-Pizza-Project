@@ -19,7 +19,7 @@ ReactDOM.render(
         <Route path="/" element={<App cartComp={<Cart />} />} />
         <Route path="/menu" element={<MenuRoute cartComp={<Cart />} />} />
         <Route path="/about" element={<AboutRoute cartComp={<Cart />} />} />
-        <Route path="/contact" element={<ContactRoute />} />
+        <Route path="/contact" element={<ContactRoute cartComp={<Cart />} />} />
         <Route path="/checkout" element={<CheckoutRoute cartComp={<Cart />} />} />
       </Routes>
     </BrowserRouter></CartProvider>, document.getElementById("root"));

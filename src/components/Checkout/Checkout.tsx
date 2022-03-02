@@ -1,9 +1,11 @@
-import React, { FC, useContext, useState } from "react"
+import React, { FC, useContext, useEffect, useState } from "react"
 import "./Checkout.css"
 import Navbar from "../Navbar/Navbar"
 import CartContext from "../../context/CartContext"
 import { ICardDetails } from "../Interfaces"
-import { formatDate, isPassedDate, validCardData } from "../../utils/helperFunctions"
+import { formatDate, validCardData } from "../../utils/helperFunctions"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Checkout: FC = () => {
 
@@ -18,8 +20,6 @@ const Checkout: FC = () => {
         cardDate: defaultDate.getMonth() + "-" + defaultDate.getFullYear(),
         cardCode: 0
     });
-    const [error, setError] = useState<string>("");
-
 
 
     function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -28,15 +28,13 @@ const Checkout: FC = () => {
 
         if (hasEmptyFields) {
             //toastify
-            setError("All card fields must be filled out!");
+            toast.error("All card fields must be filled out!");
             return;
         } else if (validCardData(cardDetails)) {
-            setError("Invalid card data!");
+            toast.error("Invalid card data!");
         }
 
-        console.log(isPassedDate(cardDetails.cardDate))
     }
-
 
 
     return (
@@ -66,8 +64,13 @@ const Checkout: FC = () => {
                 </div>
             </div>
 
+            <ToastContainer />
             <div className="checkout-payment">
-                <form className="checkout-select-card" onSubmit={(e) => handleSubmit(e)}>
+                <div className="conf-payment-cont">
+                    <h3>Confirm Payment</h3>
+                    <p>Please enter your card details below</p>
+                </div>
+                <form className="checkout-form" onSubmit={(e) => handleSubmit(e)}>
                     <select className="select-menu" placeholder="Select Card" onChange={(e) => setCardDetails({ ...cardDetails, cardType: e.target.value })} defaultValue={"DEFAULT"}>
                         <option value={"DEFAULT"} disabled={true}>Select Card</option>
                         <option value="mastercard">Mastercard</option>

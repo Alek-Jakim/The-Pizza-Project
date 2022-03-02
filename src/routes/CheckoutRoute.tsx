@@ -3,11 +3,14 @@ import Checkout from "../components/Checkout/Checkout"
 import { RouteProps } from "../components/Interfaces"
 import CartContext from "../context/CartContext"
 import { useNavigate, useLocation } from "react-router-dom";
-
+import { pageTitle } from "../utils/pageTitle";
 
 const CheckoutRoute: FC<RouteProps> = ({ cartComp }) => {
 
     const { pizzaCart, cartItems } = useContext(CartContext);
+
+    pageTitle("The Pizza Project | Checkout");
+
 
     const navigate = useNavigate();
     const location = useLocation();

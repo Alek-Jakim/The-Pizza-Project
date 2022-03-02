@@ -1,11 +1,21 @@
-import React from 'react'
+import React, { useContext, FC } from "react"
+import CartContext from "../context/CartContext";
+import { pageTitle } from "../utils/pageTitle";
+import { RouteProps } from "../components/Interfaces"
+import Contact from "../components/Contact/Contact";
 
-type Props = {}
+const ContactRoute: FC<RouteProps> = ({ cartComp }) => {
 
-const ContactRoute = (props: Props) => {
+    const { pizzaCart } = useContext(CartContext);
+    pageTitle("The Pizza Project | Our Menu");
+
     return (
         <div>
-            Contact
+            <Contact />
+
+            {
+                pizzaCart && <div style={{ position: "relative" }}>{cartComp}</div>
+            }
         </div>
     )
 }

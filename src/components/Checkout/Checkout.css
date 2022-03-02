@@ -13,8 +13,12 @@
 .checkout-items-container, .checkout-payment {
   background-color: var(--whispy-white);
   width: 60%;
-  margin: 10px auto;
+  margin: 30px auto;
   border-radius: 10px;
+}
+
+.checkout-items-container {
+  margin-top: 100px;
 }
 
 
@@ -68,15 +72,19 @@
 }
 
 
-.checkout-select-card {
+.checkout-form {
   width: 50%;
   margin: 10px auto;
 }
 
 .checkout-payment {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 50px auto;
+  border: 2px solid #000;
+
 }
 
 
@@ -97,6 +105,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  margin-top: 20px;
 }
 
 .cardcode {
@@ -119,10 +128,29 @@
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   width: 100%;
+  margin: 30px 0;
+
 }
 
 .payment-btn:hover {
   border: 3px solid var(--red-tide);
   background: #fff;
   color: var(--red-tide);
+}
+
+.conf-payment-cont {
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding: 20px 5px;
+}
+
+.conf-payment-cont > h3 {
+  font-size: 2.4rem;
+}
+
+.conf-payment-cont > p {
+  font-size: 1.5rem;
+  margin-top: 20px;
 }
