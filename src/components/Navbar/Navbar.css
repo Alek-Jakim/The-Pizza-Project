@@ -8,6 +8,11 @@
     font-family: var(--lobster);
 }
 
+.burger-links-container {
+    display: none;
+    transition: all 1s ease-in-out;
+}
+
 .nav-links > a {
     text-decoration: none;
     color: var(--whispy-white);
@@ -46,3 +51,72 @@
 .cart-icon-cont:hover {
     color: var(--red-meat);
 }
+
+
+
+
+
+
+
+
+
+  /*MOBILE*/
+@media only screen and (max-width: 415px) {
+    .navbar {
+        flex-direction: column;
+        position: relative;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-title {
+        margin-top: 100px;
+        font-size: 2.5rem;
+    }
+
+    .burger-icon {
+        color: var(--red-tide);
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        font-size: 2.2rem;
+    }
+
+    .cart-icon-cont {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+
+    .burger-links-container {
+        transition: all 1s ease-in-out;
+        background-color: var(--whispy-white);
+        color: var(--red-tide);
+        height: 100vh;
+        width: 50%;
+        margin-right: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .burger-links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: auto;
+        height: 100%;
+    }
+    
+    .burger-links > a {
+        text-decoration: none;
+        color: var(--red-tide);
+        font-size: 1.7rem;
+        margin: 20px;
+        transition: all 0.3s ease-in-out;
+    }
+    
+  }

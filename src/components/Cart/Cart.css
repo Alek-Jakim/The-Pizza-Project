@@ -145,3 +145,18 @@
     padding: 10px 15px;
     font-size: 1.5rem;
 }
+
+
+
+
+
+
+
+
+/*MOBILE*/
+
+@media only screen and (max-width: 415px) {
+    .cart-container {
+        width: 50%;
+    }
+}

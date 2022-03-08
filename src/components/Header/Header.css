@@ -5,7 +5,9 @@
     background-repeat: no-repeat;
     height: 100vh;
     display: flex;
-    flex-direction: column;  
+    flex-direction: column;
+    overflow: auto;
+
   }
   
   .header-container {
@@ -49,3 +51,15 @@
     background: #fff;
     color: var(--red-tide);
   }
+
+
+
+
+
+
+
+
+
+
+  /*MOBILE*/
+

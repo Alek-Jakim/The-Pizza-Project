@@ -5,7 +5,8 @@
     background-repeat: no-repeat;
     height: 100vh;
     display: flex;
-    flex-direction: column;  
+    flex-direction: column;
+    overflow: auto;
   }
 
 .about-text-container {

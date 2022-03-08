@@ -57,9 +57,6 @@ export const isPassedDate = (date: string): boolean => {
 export const validCardData = (cardDetails: ICardDetails): boolean => {
     let isValid: boolean;
 
-    let today = new Date(Date.now()).toLocaleDateString();
-    //!dateInPast(cardDetails.cardDate, today) ||
-
     if (cardDetails.cardNumber !== 16 || cardDetails.cardCode !== 3 || isPassedDate(cardDetails.cardDate)) {
         isValid = false;
     } else {
