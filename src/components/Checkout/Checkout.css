@@ -161,7 +161,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   margin: auto;
+}
+
+.loader-container > p {
+  font-size: 2rem;
+  margin-top: 20px;
+  color: var(--whispy-white);
+  text-align: center;
 }
 
 
@@ -178,3 +186,61 @@
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
   }
+
+
+
+
+
+
+
+/*MOBILE*/
+
+@media only screen and (max-width: 415px) {
+  .checkout-items-container, .checkout-payment {
+    width: 95%;
+  }
+  
+  .checkout-item {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+  }
+  
+  .checkout-price, .checkout-name, .checkout-quantity{
+     width: 100%;
+     font-size: 1rem;
+     justify-content: space-between;
+     margin: 0 20px;
+  }
+
+  .checkout-img {
+    display: none;
+  }
+
+
+
+
+
+
+
+  .conf-payment-cont {
+    width: 90%;
+    text-align: center;
+  }
+
+  .checkout-form {
+    width: 90%;
+  }
+
+  .cardnumber {
+    font-size: 1.3rem;
+  }
+
+  .cardcode, .cardyear {
+    font-size: 1rem;
+  }
+
+  .cardcode {
+    padding-top: 10px;
+  }
+}

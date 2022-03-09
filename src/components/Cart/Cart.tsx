@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 
 const Cart: FC = () => {
 
-    const { pizzaCart, setPizzaCart, cartItems, setCartItems, cartTotal, setCartTotal } = useContext(CartContext);
+    const { pizzaCart, setPizzaCart, cartItems, setCartItems, cartTotal, setCartTotal, setBurgerMenu } = useContext(CartContext);
 
 
     useEffect(() => {
@@ -25,8 +25,6 @@ const Cart: FC = () => {
                     targetBtn.innerHTML = "Cart";
                     targetBtn.disabled = false;
                 }
-
-
             }
         }
         cartItems.length === 0 && returnBtnDefault();
@@ -35,9 +33,13 @@ const Cart: FC = () => {
     }, [cartItems])
 
 
+
+
     return (
         <div className="cart-container">
-            <AiOutlineClose className="cart-close-icon" onClick={() => setPizzaCart(!pizzaCart)} />
+            <AiOutlineClose className="cart-close-icon" onClick={() => {
+                setPizzaCart(!pizzaCart);
+            }} />
             {
                 <div className="cart-inner">
                     <h1 className="cart-inner-title">Your Pizzas</h1>

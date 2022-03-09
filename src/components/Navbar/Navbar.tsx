@@ -10,8 +10,7 @@ const Navbar: FC = () => {
     const location = useLocation();
 
     const [currentPath, setCurrentPath] = useState<string>(location.pathname);
-    const { pizzaCart, setPizzaCart, cartItems } = useContext(CartContext);
-    const [burgerMenu, setBurgerMenu] = useState<boolean>(false);
+    const { pizzaCart, setPizzaCart, cartItems, burgerMenu, setBurgerMenu } = useContext(CartContext);
 
     useEffect(() => {
         setCurrentPath(location.pathname);
@@ -21,11 +20,19 @@ const Navbar: FC = () => {
         let burger: any = document.querySelector(".burger-links-container");
         setBurgerMenu(!burgerMenu);
 
-        if (burgerMenu) {
+        if (!burgerMenu) {
             burger.style.display = "block"
+            setPizzaCart(false);
         } else {
             burger.style.display = "none"
         }
+    }
+
+    const handlePizzaCart = (): void => {
+        let burger: any = document.querySelector(".burger-links-container");
+        setPizzaCart(!pizzaCart);
+        setBurgerMenu(!burgerMenu);
+        burger.style.display = "none"
     }
 
 
@@ -50,7 +57,7 @@ const Navbar: FC = () => {
 
             <div className="burger-links-container">
                 <div className="burger-close">
-                    <GiFullPizza className="burger-icon" onClick={handleBurger} />
+                    <GiFullPizza className="burger-icon burger-icon-close" onClick={handleBurger} />
                 </div>
 
                 <div className="burger-links">
@@ -65,7 +72,7 @@ const Navbar: FC = () => {
                 </div>
             </div>
 
-            <div className="cart-icon-cont" onClick={() => setPizzaCart(!pizzaCart)}>
+            <div className="cart-icon-cont" onClick={handlePizzaCart}>
                 <AiOutlineShoppingCart className="cart-icon" />
                 <small className="cart-icon-num">{cartItems.length}</small>
             </div>

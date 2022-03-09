@@ -77,7 +77,7 @@
     }
 
     .burger-icon {
-        color: var(--red-tide);
+        color: var(--whispy-white);
         position: absolute;
         top: 10px;
         left: 10px;
@@ -93,9 +93,8 @@
     .burger-links-container {
         transition: all 1s ease-in-out;
         background-color: var(--whispy-white);
-        color: var(--red-tide);
         height: 100vh;
-        width: 50%;
+        width: 70%;
         margin-right: auto;
         position: absolute;
         top: 0;
@@ -114,9 +113,13 @@
     .burger-links > a {
         text-decoration: none;
         color: var(--red-tide);
-        font-size: 1.7rem;
+        font-size: 1.9rem;
         margin: 20px;
         transition: all 0.3s ease-in-out;
+    }
+
+    .burger-icon-close {
+        color: var(--red-tide);
     }
     
   }

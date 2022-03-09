@@ -12,7 +12,7 @@ const Checkout: FC = () => {
 
     let navigate = useNavigate();
 
-    const { cartItems, cartTotal } = useContext(CartContext);
+    const { cartItems, cartTotal, setCartItems } = useContext(CartContext);
     const [isLoading, setIsLoading] = useState<boolean>(false);
 
     let defaultDate = new Date();
@@ -41,6 +41,7 @@ const Checkout: FC = () => {
             setIsLoading(true);
             setTimeout(() => {
                 navigate("/", { replace: true });
+                setCartItems([]);
             }, 3000);
         }
 
@@ -54,6 +55,7 @@ const Checkout: FC = () => {
             {isLoading ?
                 <div className="loader-container">
                     <div className="loader"></div>
+                    <p>Payment is being processed...</p>
                 </div> :
 
                 <>
@@ -96,7 +98,7 @@ const Checkout: FC = () => {
                             <input type="text" className="cardholder" placeholder="Name of cardholder" onChange={(e) => setCardDetails({ ...cardDetails, cardHolder: e.target.value })} />
                             <input type="number" className="cardnumber" placeholder="XXXX-XXXX-XXXX-XXXX" maxLength={16} onChange={(e) => setCardDetails({ ...cardDetails, cardNumber: parseInt(e.target.value) })} />
                             <div className="card-year-code">
-                                <input type="date" className="cardyear" placeholder="MM/JJJJ" onChange={(e) => setCardDetails({ ...cardDetails, cardDate: formatDate(e.target.value) })} />
+                                <input type="text" className="cardyear" placeholder="MM/JJJJ" onChange={(e) => setCardDetails({ ...cardDetails, cardDate: formatDate(e.target.value) })} />
                                 <input type="number" className="cardcode" placeholder="Verification Code" onChange={(e) => setCardDetails({ ...cardDetails, cardCode: parseInt(e.target.value) })} />
                             </div>
                             <input type="submit" value="Confirm Payment" className="payment-btn" />

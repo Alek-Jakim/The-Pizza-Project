@@ -25,6 +25,8 @@ export interface ICartContext {
     setCartItems: React.Dispatch<React.SetStateAction<ICartItems[]>>;
     cartTotal: number;
     setCartTotal: React.Dispatch<React.SetStateAction<number>>;
+    burgerMenu: boolean;
+    setBurgerMenu: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 export interface ICardDetails {

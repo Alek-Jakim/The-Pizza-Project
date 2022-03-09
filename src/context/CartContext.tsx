@@ -7,7 +7,9 @@ export const defaultValues = {
     cartItems: [],
     setCartItems: () => [],
     cartTotal: 0,
-    setCartTotal: () => 0
+    setCartTotal: () => 0,
+    burgerMenu: false,
+    setBurgerMenu: () => false
 }
 
 
@@ -18,11 +20,12 @@ export const CartProvider: FC<ICartProvider> = ({ children }) => {
     const [pizzaCart, setPizzaCart] = useState<boolean>(false);
     const [cartItems, setCartItems] = useState<ICartItems[]>([]);
     const [cartTotal, setCartTotal] = useState<number>(0);
+    const [burgerMenu, setBurgerMenu] = useState<boolean>(false);
 
 
 
     return (
-        <CartContext.Provider value={{ pizzaCart, setPizzaCart, cartItems, setCartItems, cartTotal, setCartTotal }}>
+        <CartContext.Provider value={{ pizzaCart, setPizzaCart, cartItems, setCartItems, cartTotal, setCartTotal, burgerMenu, setBurgerMenu }}>
             {children}
         </CartContext.Provider>
     )

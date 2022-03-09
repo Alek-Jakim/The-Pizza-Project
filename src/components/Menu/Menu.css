@@ -130,3 +130,42 @@
   color: var(--red-meat);
   cursor: crosshair;
 }
+
+
+
+
+
+
+
+
+
+
+/*MOBILE*/
+
+@media only screen and (max-width: 415px) {
+  .cart-menu-item {
+    flex-direction: column;
+    border-top: 2px solid #000;
+    padding-top: 20px;
+    padding-bottom: 10px;
+  }
+
+  .cart-menu-inner {
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+  }
+
+  .cart-menu-img, .cart-menu-header, .cart-menu-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .cart-menu-ingredients {
+    width: 68%;
+  }
+}

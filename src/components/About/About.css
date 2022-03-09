@@ -34,3 +34,29 @@
   font-size: 2rem;
   padding: 10px 15px;
 }
+
+
+
+
+
+
+
+
+/*MOBILE*/
+
+@media only screen and (max-width: 415px) {
+  .about-text-container {
+    width: 100%;
+    margin-left: 15px;
+    padding: 5px 15px;
+  }
+
+  .about-text {
+    font-size: 1.65rem;
+    line-height: 35px;
+  }
+
+  .about-header {
+    width: 100%;
+  }
+}
