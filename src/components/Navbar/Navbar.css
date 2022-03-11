@@ -8,9 +8,8 @@
     font-family: var(--lobster);
 }
 
-.burger-links-container {
+.burger-links-container, .burger-icon {
     display: none;
-    transition: all 1s ease-in-out;
 }
 
 .nav-links > a {
@@ -77,6 +76,7 @@
     }
 
     .burger-icon {
+        display: block;
         color: var(--whispy-white);
         position: absolute;
         top: 10px;

@@ -2,6 +2,7 @@ import React, { FC, useContext, useState } from "react"
 import "./Checkout.css"
 import { useNavigate } from "react-router-dom";
 import Navbar from "../Navbar/Navbar"
+import Footer from "../Footer/Footer";
 import CartContext from "../../context/CartContext"
 import { ICardDetails } from "../Interfaces"
 import { formatDate, validCardData } from "../../utils/helperFunctions"
@@ -106,7 +107,7 @@ const Checkout: FC = () => {
                     </div>
                 </>
             }
-
+            <Footer />
         </div>
     )
 }

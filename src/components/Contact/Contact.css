@@ -5,6 +5,249 @@
     background-repeat: no-repeat;
     height: 100vh;
     display: flex;
-    flex-direction: column;  
+    flex-direction: column;
     overflow: auto;
+}
+
+.contact-center-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 100%;
+    background-color: var(--whispy-white);
+    margin: 30px auto;
+    border-radius: 10px;
+}
+
+.contact-left, .contact-right {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--merri);
+}
+
+
+.contact-left {
+    border-right: 3px solid #000;
+    justify-content: center;
+
+}
+
+.contact-left > p {
+    font-size: 2rem;
+}
+
+.contact-left > * {
+    margin-left: 100px;
+    margin-bottom: 35px;
+}
+
+.contact-left-header, .contact-right-header {
+    font-size: 4rem;
+    color: var(--red-tide);
+}
+
+.contact-left-icons {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 70%;
+}
+
+
+.contact-icon {
+    font-size: 3rem;
+    color: var(--red-tide);
+    transition: 0.4s all ease-in-out;
+    cursor: pointer;
+}
+
+.contact-icon:hover {
+    color: var(--red-meat);
+}
+
+
+
+
+
+.contact-right {
+    border-left: 3px dotted #000;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.contact-form > h3 {
+    font-size: 4rem;
+    color: var(--red-tide);
+    margin-bottom: 60px;
+}
+
+.contact-name-email {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+}
+
+.contact-name {
+    margin-right: 20px;
+}
+
+.contact-name, .contact-email, .contact-message {
+    padding: 10px;
+    font-size: 1.2rem;
+    border: 3px solid var(--red-tide);
+    border-radius: 10px;
+    outline: none;
+}
+
+.contact-message {
+    resize: none;
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    font-size: 1.2rem;
+    border: 3px solid var(--red-tide);
+    border-radius: 10px;
+    outline: none;
+}
+
+.contact-btn {
+    margin: 15px auto;
+    display: flex;
+    justify-content: center;
+    padding: 15px 40px;
+    font-size: 2rem;
+    background: var(--red-tide);
+    color: #fff;
+    outline: none;
+    border: 3px solid var(--red-tide);
+    border-radius: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+}
+
+
+.contact-btn:hover {
+    border: 3px solid var(--red-tide);
+    background: #fff;
+    color: var(--red-tide);
+}
+
+
+
+
+
+
+/*MOBILE*/
+
+@media only screen and (max-width: 415px) {
+
+    .contact-container {
+        height: 100%;
+    }
+
+
+    .contact-center-container {
+        flex-direction: column;
+        width: 90%;
+        height: 100%;
+    }
+
+    .contact-left, .contact-right {
+        width: 90%;
+        border: none;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    }
+
+    .contact-left-header, .contact-right-header {
+        font-size: 2rem;
+    }
+
+    .contact-left > p {
+        font-size: 1.5rem;
+    }
+
+    .contact-right {
+        width: 100%;
+    }
+
+    .contact-form {
+        margin-top: -300px;
+        width: 100%;
+    }
+
+    .contact-form > h3 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .contact-name-email {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .contact-name, .contact-email, .contact-message {
+        padding: 5px;
+        font-size: 1.2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contact-left-icon-container {
+        width: 100%;
+    }
+
+    .contact-left-icons {
+        margin-top: 0;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .contact-icon {
+        margin-top: 10px;
+    }
+
+    
+    .contact-left > * {
+        margin-left: 20px;
+        margin-bottom: 15px;
+    }
+
+    .contact-left-icons {
+        margin-top: 10px;
+        width: 70%;
+    }
+
+    .contact-btn {
+        margin: 5px auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px 15px;
+        font-size: 1rem;
+    }
 }
