@@ -162,26 +162,28 @@
 @media only screen and (max-width: 415px) {
 
     .contact-container {
-        height: 100%;
+        height: initial;
     }
 
 
     .contact-center-container {
         flex-direction: column;
         width: 90%;
-        height: 100%;
+        height: initial;
+        justify-content: space-between;
     }
 
     .contact-left, .contact-right {
-        width: 90%;
+        width: 100%;
         border: none;
         justify-content: center;
         align-items: center;
-        margin: auto;
+        margin: 10px auto;
     }
 
     .contact-left-header, .contact-right-header {
-        font-size: 2rem;
+        font-size: 3rem;
+        text-align: center;
     }
 
     .contact-left > p {
@@ -197,6 +199,10 @@
         width: 100%;
     }
 
+    .contact-form > form {
+        width: 100%;
+    }
+
     .contact-form > h3 {
         font-size: 2rem;
         margin-bottom: 20px;
@@ -207,6 +213,7 @@
         justify-content: center;
         align-items: center;
         width: 100%;
+        margin: 10px auto;
     }
 
     .contact-name, .contact-email, .contact-message {
@@ -215,6 +222,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        margin: 10px auto;
+        width: 90%;
     }
 
     .contact-left-icon-container {
@@ -222,9 +231,10 @@
     }
 
     .contact-left-icons {
-        margin-top: 0;
+        margin-top: 10px;
         justify-content: space-between;
         width: 100%;
+        margin: 10px auto;
     }
 
     .contact-icon {
@@ -249,5 +259,6 @@
         align-items: center;
         padding: 5px 15px;
         font-size: 1rem;
+        width: 90%;
     }
 }
