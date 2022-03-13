@@ -1,10 +1,10 @@
-import React, { FC, useContext, useEffect } from "react"
+import { FC, useContext, useEffect } from "react"
 import "./Cart.css"
 import { AiOutlineClose } from "react-icons/ai"
 import { RiShoppingCartLine } from "react-icons/ri"
 import CartContext from "../../context/CartContext"
 import { returnBtnDefault } from "../../utils/helperFunctions"
-import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md"
+import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai"
 import { increment, decrement, checkQuantity, calculateTotal } from "../../utils/mainFunctions"
 import { Link } from "react-router-dom";
 
@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 
 const Cart: FC = () => {
 
-    const { pizzaCart, setPizzaCart, cartItems, setCartItems, cartTotal, setCartTotal, setBurgerMenu } = useContext(CartContext);
+    const { pizzaCart, setPizzaCart, cartItems, setCartItems, cartTotal, setCartTotal, } = useContext(CartContext);
 
 
     useEffect(() => {
@@ -42,7 +42,7 @@ const Cart: FC = () => {
             }} />
             {
                 <div className="cart-inner">
-                    <h1 className="cart-inner-title">Your Pizzas</h1>
+                    <h1 className="cart-inner-title">Your Items</h1>
 
                     {
                         cartItems.length === 0 ?
@@ -59,9 +59,9 @@ const Cart: FC = () => {
                                             <p className="cart-item-price">Price: €{item.price}</p>
                                         </div>
                                         <div className="cart-item-quantity">
-                                            <MdKeyboardArrowLeft className="quantity-arrow" onClick={() => decrement(item, cartItems, setCartItems)} />
+                                            <AiOutlineMinus className="quantity-arrow" onClick={() => decrement(item, cartItems, setCartItems)} />
                                             <p className="quantity-num">{item.quantity}</p>
-                                            <MdKeyboardArrowRight className="quantity-arrow" onClick={() => increment(item, cartItems, setCartItems)} />
+                                            <AiOutlinePlus className="quantity-arrow" onClick={() => increment(item, cartItems, setCartItems)} />
                                         </div>
                                     </div>
                                 })}
@@ -73,7 +73,7 @@ const Cart: FC = () => {
                                         setCartItems([]);
                                         setCartTotal(0);
                                     }}>Clear Cart</button>
-                                    <button className="checkout-btn"><Link to="/checkout" style={{ textDecoration: "none", color: "white", fontSize: "1.3rem" }}>Checkout</Link></button>
+                                    <button className="checkout-btn" onClick={() => setPizzaCart(false)}><Link to="/checkout" style={{ textDecoration: "none", color: "#ce2711", fontSize: "1.3rem" }}>Checkout</Link></button>
                                 </div>
                             </div>
                     }

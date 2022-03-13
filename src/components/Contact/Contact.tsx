@@ -1,10 +1,41 @@
-import React from "react"
+import React, { useState, FormEvent } from "react"
 import Navbar from "../Navbar/Navbar"
 import Footer from "../Footer/Footer"
+import { IContactDetails } from "../Interfaces"
 import "./Contact.css"
 import { FaInstagram, FaFacebook, FaTiktok } from "react-icons/fa"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from "react-router-dom";
+
 
 const Contact = () => {
+
+    let navigate = useNavigate();
+
+    const [contactDetails, setContactDetails] = useState<IContactDetails>({
+        name: "",
+        email: "",
+        message: ""
+    });
+
+
+    // see in checkout how to do this
+
+    function handleContactSubmit(e: FormEvent<HTMLFormElement>) {
+        e.preventDefault();
+        const hasEmptyFields = Object.values(contactDetails).some((el) => el === "");
+
+        if (hasEmptyFields) {
+            toast.error("All fields must be filled out!");
+        } else {
+            toast.done("Thank you for your message!");
+            setTimeout(() => {
+                navigate("/", { replace: true });
+            }, 3000);
+        }
+    }
+
     return (
         <div className="contact-container">
             <Navbar />
@@ -24,15 +55,16 @@ const Contact = () => {
                         </div>
                     </div>
                 </div>
+                <ToastContainer />
                 <div className="contact-right">
                     <div className="contact-form">
                         <h3>Write us a message</h3>
-                        <form>
+                        <form onSubmit={(e) => handleContactSubmit(e)}>
                             <div className="contact-name-email">
-                                <input type="text" placeholder="Name" className="contact-name" />
-                                <input type="email" placeholder="Email" className="contact-email" />
+                                <input type="text" placeholder="Name" className="contact-name" onChange={(e) => setContactDetails({ ...contactDetails, name: e.target.value })} />
+                                <input type="email" placeholder="Email" className="contact-email" onChange={(e) => setContactDetails({ ...contactDetails, email: e.target.value })} />
                             </div>
-                            <textarea name="message" className="contact-message" placeholder="Message..." ></textarea>
+                            <textarea name="message" className="contact-message" placeholder="Message..." onChange={(e) => setContactDetails({ ...contactDetails, message: e.target.value })} ></textarea>
                             <button type="submit" className="contact-btn">Send</button>
                         </form>
                     </div>

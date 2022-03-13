@@ -157,13 +157,27 @@
 
 
 
-.loader-container {
+.loader-container, .gb-message-cont {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   margin: auto;
 }
+
+.gb-message-cont {
+  background-color: var(--whispy-white);
+  width: 40%;
+  border: 3px solid var(--red-tide);
+  border-radius: 10px;
+}
+
+.gb-message {
+  margin: 30px auto;
+  font-size: 2rem;
+  font-family: var(--merri);
+}
+
 
 .loader-container > p {
   font-size: 2rem;
@@ -215,6 +229,11 @@
 
   .checkout-img {
     display: none;
+  }
+
+  .gb-message-cont {
+    width: 90%;
+    text-align: center;
   }
 
 

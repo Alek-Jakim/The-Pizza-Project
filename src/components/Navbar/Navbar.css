@@ -77,28 +77,32 @@
 
     .burger-icon {
         display: block;
-        color: var(--whispy-white);
-        position: absolute;
+        color: rgb(228, 38, 38);
+        position: fixed;
         top: 10px;
         left: 10px;
         font-size: 2.2rem;
     }
 
     .cart-icon-cont {
-        position: absolute;
+        position: fixed;
         top: 10px;
         right: 10px;
     }
 
+    .cart-icon, .cart-icon-num {
+        color: rgb(228, 38, 38);
+    }
+
     .burger-links-container {
-        transition: all 1s ease-in-out;
         background-color: var(--whispy-white);
         height: 100vh;
         width: 70%;
         margin-right: auto;
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
+        overflow: auto;
     }
 
     .burger-links {

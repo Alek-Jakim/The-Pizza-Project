@@ -38,6 +38,9 @@ export interface ICardDetails {
 }
 
 
-
-
+export interface IContactDetails {
+    name: string;
+    email: string;
+    message: string;
+}
 
